@@ -1,0 +1,9 @@
+@import './config';
+@import './reset';
+@import 'utilities/*';
+@import 'base/*';
+// @import 'components/*';
+
+body {
+	color: color(yellow);
+}

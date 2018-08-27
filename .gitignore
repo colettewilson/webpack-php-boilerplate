@@ -1,0 +1,10 @@
+### Compiled media ###
+/public/dist/
+
+### Node ###
+*.log
+logs/
+node_modules/
+
+### OS X ###
+.DS_Store
