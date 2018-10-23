@@ -16,7 +16,7 @@ $breakpoint-classes: (small medium large xlarge xxlarge);
 //------------------------------------------------------------------------------
 
 $colors: (
-  yellow: #00ff00,
+  // e.g. brand-yellow: #ffff00,
 );
 
 @function color($color) {
