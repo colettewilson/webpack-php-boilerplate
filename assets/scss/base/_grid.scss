@@ -1,0 +1,96 @@
+$grid-gutter: 15px;
+
+.grid {
+  display: block;
+  padding-right: $grid-gutter;
+  padding-left: $grid-gutter;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-column-gap: $grid-gutter;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+  }
+
+  @supports not (display: grid) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @supports not (display: flex) { 
+
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+  }
+}
+
+.grid__item {
+  float: left;
+  width: 100%;
+  
+  @supports (display: grid) {
+    width: auto;
+    grid-column-end: span 12;
+  }
+
+  @supports not (display: grid) {
+    padding-right: $grid-gutter;
+    padding-left: $grid-gutter;
+  }
+}
+
+@each $breakpoint, $size in $breakpoints {
+
+  @media screen and (min-width: #{$size}) {
+    
+    @for $i from 1 through 12 {
+      
+      // Col width classes
+      .#{$breakpoint}-#{$i} {
+        display: inline-block;
+        width: 100% / 12 * $i;
+
+        @supports (display: grid) {
+          width: auto;
+          grid-column-end: span $i;
+        }
+      }
+
+      // Offset classes
+      .#{$breakpoint}-offset-#{$i} {
+        @supports not (display: grid) {
+          margin-left: 100% / 12 * $i;
+        }
+        
+        @supports (display: grid) {
+          grid-column-start: $i;
+        }
+      }
+    }
+  }
+}
+
+// Grid helper classes
+.grid--unpadded {
+  padding-right: 0;
+  padding-left: 0;
+
+  > .grid__item {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  @supports (display: grid) {
+    grid-column-gap: 0;
+  }
+}
+
+.grid--flush {
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: -($grid-gutter);
+  margin-left: -($grid-gutter);
+}
