@@ -9,7 +9,38 @@ $breakpoints: (
   xxlarge: 1440px,
 );
 
-$breakpoint-classes: (small medium large xlarge xxlarge);
+@mixin breakpoint($breakpoint) {
+  $bp: nth($breakpoint, 1);
+  $max: 0;
+  $dir: nth($breakpoint, 2);
+  $query: 'only screen';
+
+  @if map-has-key($breakpoints, $bp) {
+    $min: map-get($breakpoints, $bp);
+    $nextIndex: index($breakpoints, $bp $min) + 1;
+    $next: if(nth($breakpoints, $nextIndex) != 'null', nth($breakpoints, $nextIndex), null);
+
+    @if $dir == 'only' {
+      $query: $query + ' and (min-width: #{$min})';
+      
+      @if $next == null {
+        $max: null;
+      } @else {
+        $max: nth($next, 2) - (1 / 16);
+        $query: $query + ' and (max-width: #{$max})';
+      }
+    } @elseif $dir == 'up' {
+      $query: $query + ' and (min-width: #{$min})';
+    } @elseif $dir == 'down' {
+      $max: nth($next, 2) - (1 / 16);
+      $query: $query + ' and (max-width: #{$max})';
+    }
+
+    @media #{$query} {
+      @content;
+    }
+  }
+}
 
 
 // Colors
