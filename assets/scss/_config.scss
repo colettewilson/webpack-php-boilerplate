@@ -18,11 +18,11 @@ $breakpoints: (
   @if map-has-key($breakpoints, $bp) {
     $min: map-get($breakpoints, $bp);
     $nextIndex: index($breakpoints, $bp $min) + 1;
-    $next: if(nth($breakpoints, $nextIndex) != 'null', nth($breakpoints, $nextIndex), null);
+    $next: if($nextIndex > length($breakpoints), null, nth($breakpoints, $nextIndex));
 
     @if $dir == 'only' {
       $query: $query + ' and (min-width: #{$min})';
-      
+
       @if $next == null {
         $max: null;
       } @else {
@@ -43,13 +43,67 @@ $breakpoints: (
 }
 
 
+// Grid Widths
+//------------------------------------------------------------------------------
+
+$grid-fallback-widths: (
+  1: 8.3333%,
+  2: 16.666%,
+  3: 25%,
+  4: 33.3333%,
+  5: 41.6666%,
+  6: 50%,
+  7: 58.3333%,
+  8: 66.6666%,
+  9: 75%,
+  10: 83.3333%,
+  11: 91.6666%,
+  12: 100%,
+);
+
+
+// Fonts
+//------------------------------------------------------------------------------
+
+@mixin example($weight: 400, $style: normal) {
+  font-family: example, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-style: $style;
+  font-weight: $weight;
+}
+
+
 // Colors
 //------------------------------------------------------------------------------
 
 $colors: (
-  // e.g. brand-yellow: #ffff00,
+  // red: #e74c38,
 );
 
 @function color($color) {
   @return map-get($colors, $color);
+}
+
+
+// Block Sizings
+//------------------------------------------------------------------------------
+
+$aspects: (
+  // profile: percentage(3 / 4),
+);
+
+
+// Block Sizings
+//------------------------------------------------------------------------------
+
+$blocks: (
+  xxlarge: 80px,
+  xlarge: 64px,
+  large: 48px,
+  medium: 32px,
+  small: 8px,
+  gutter: 16px,
+);
+
+@function block($block) {
+  @return map-get($blocks, $block);
 }

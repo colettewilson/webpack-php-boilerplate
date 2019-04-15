@@ -1,10 +1,14 @@
 ### Compiled media ###
 /public/dist/
+/assets/sprites/tmpl.scss
 
 ### Node ###
 *.log
 logs/
 node_modules/
+
+### Yarn ###
+yarn.lock
 
 ### OS X ###
 .DS_Store

@@ -1,16 +1,18 @@
+// ::selection {
+//   color: ;
+//   background-color: ;
+// }
+
+// ::-moz-selection {
+//   color: ;
+//   background-color: ;
+// }
+
 html {
   // background-color: ;
 }
 
-body {
-  // color: ;
-  // -webkit-tap-highlight-color: ;
-
-  &::selection {
-    // color: ;
-    // background-color: ;
-  }
-}
+body {}
 
 button,
 select,

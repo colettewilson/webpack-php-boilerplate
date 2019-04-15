@@ -1,7 +1,7 @@
 export default class Test {
 
   	constructor(wrap) {
-    	this.wrap = wrap;
+    	const $wrap = $(wrap)
 
     	console.log("Hello!")
   	}

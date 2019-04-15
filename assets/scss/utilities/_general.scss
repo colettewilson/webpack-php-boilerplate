@@ -1,0 +1,30 @@
+@mixin hide-scrollbars {
+  scrollbar-width: none;
+  // sass-lint:disable no-vendor-prefixes
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin bg-img($size: cover) {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: $size;
+}

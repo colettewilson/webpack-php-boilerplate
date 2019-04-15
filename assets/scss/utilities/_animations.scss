@@ -1,5 +1,5 @@
-@mixin transition($property, $ease: ease, $duration: 150ms) {
+@mixin transition($props, $ease: ease, $duration: 250ms) {
   transition-duration: $duration;
-  transition-property: implode($property, ', ');
+  transition-property: $props;
   transition-timing-function: $ease;
 }
