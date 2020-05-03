@@ -1,8 +1,8 @@
 export default class Test {
 
-  	constructor(wrap) {
-    	const $wrap = $(wrap)
+  constructor(wrap) {
+    const $wrap = $(wrap)
 
-    	console.log("Hello!")
-  	}
+    console.log("Hello!")
+  }
 }

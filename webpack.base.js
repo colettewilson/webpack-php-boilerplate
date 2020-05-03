@@ -1,11 +1,11 @@
 const webpack = require("webpack");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const globImporter = require("node-sass-glob-importer");
-const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
+const ManifestPlugin = require("webpack-manifest-plugin");
 
 module.exports = {
   entry: {
