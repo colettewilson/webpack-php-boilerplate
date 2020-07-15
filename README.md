@@ -16,10 +16,8 @@
 4. Visit [http://localhost:3000](http://localhost:3000)
 
 ## SVG
-## ======
 
-
-## Using SVG sprites
+### Using SVG sprites
 Use markup similar to:
 
 ```html
@@ -39,10 +37,8 @@ e.g. The markup to use a logo portion of the sprite would be:
 ```
 
 ## Class naming conventions
-## ======
 
-
-## Components
+### Components
 ```scss
 /* Component */
 .component-name {}
@@ -57,7 +53,7 @@ e.g. The markup to use a logo portion of the sprite would be:
 .component-name__descendant--modifier-name {}
 ```
 
-## States
+### States
 
 Used to indicate the state of a component, scoped to component
 
@@ -83,7 +79,7 @@ Used to indicate the state of a component, scoped to component
 .field.is-hidden {}
 
 ```
-## JavaScript selectors
+### JavaScript selectors
 
 Used to provide JS-only hooks for a component. Can be used to provide a JS-enhanced UI or to abstract other JS behaviours.
 
@@ -104,7 +100,7 @@ Used to provide JS-only hooks for a component. Can be used to provide a JS-enhan
 .js-carousel
 ```
 
-## Utility Classes
+### Utility Classes
 These are one purpose classes
 
 **Pattern**
@@ -120,7 +116,7 @@ These are one purpose classes
 .ut-inline-block
 ```
 
-## Class name order in html
+### Class name order in html
 
 **Grid Classes**
 ```html
