@@ -43,7 +43,7 @@
   "dependencies": {
     "browser-sync-webpack-plugin": "^2.2.2",
     "compression-webpack-plugin": "^2.0.0",
-    "lodash": "4.17.13",
+    "lodash": "4.17.19",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "stylelint-webpack-plugin": "^0.10.5",
     "svg-spritemap-webpack-plugin": "^2.7.1",
